@@ -1,1 +1,1 @@
-s21_class.s21_class import *
+from s21_class.s21_class import *
