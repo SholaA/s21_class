@@ -23,7 +23,7 @@ def paml_table_one_gene(*, nm, leng, species, sp_num,PAML, omega, title, M7, M8)
   LR = 2*(abs(M7 - M8))
   fin = chi2.sf(LR,5)
   df = {'Name': nm, 
-        'Protein Length':188, 
+        'Protein Length':leng, 
         'Species':species, 
         'Max Species':sp_num ,
         'Evolving Amino Acids':[PAML], 
