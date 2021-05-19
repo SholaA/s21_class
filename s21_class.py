@@ -27,7 +27,7 @@ def paml_table_one_gene(*, nm, leng, species, sp_num,PAML, omega, title, M7, M8)
         'Species':species, 
         'Max Species':sp_num ,
         'Evolving Amino Acids':[PAML], 
-        '\u03C9 > 1':'omega', 
+        '\u03C9 > 1':omega, 
         '\u03C7\u00B2 p-value': f'{fin:.5E}'} 
   pd_df = pd.DataFrame(data= df, index = np.arange(1))
   pd_df.style
