@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd 
 import matplotlib as plt
+import spacy 
 from scipy.stats.distributions import chi2
 
 def remove_list_item(*, the_list, the_item):
@@ -32,3 +33,12 @@ def paml_table_one_gene(*, nm, leng, species, sp_num,PAML, omega, title, M7, M8)
   pd_df = pd.DataFrame(data= df, index = np.arange(1))
   pd_df.style
   return pd_df.style.set_caption(title)
+
+def wrangle_text(*,essay):
+  ##Turning into a SpaCy item
+  doc = nlp(essay)
+  # word types to remove: stop,punctuation, oov, 
+  # word type to keep: alpha
+  # list compehension  = [for, in, if not, and not, and] 
+  word = [token.text.lower() for token in doc if not token.is_stop and not token.is_oov and token.is_alpha]
+  return word 
